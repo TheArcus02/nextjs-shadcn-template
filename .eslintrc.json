@@ -1,3 +1,26 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript",
+    "standard",
+    "plugin:tailwindcss/recommended",
+    "prettier"
+  ],
+  "plugins": ["tailwindcss"],
+  "rules": {
+    "tailwindcss/no-custom-calssname": "off",
+    "tailwindcss/classnames-order": "error"
+  },
+  "settings": {
+    "tailwindcss": {
+      "callees": ["cn", "cva"],
+      "config": "tailwind.config.ts"
+    }
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "parser": "@typescript-eslint/parser"
+    }
+  ]
 }
